@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.yh.cn.dao.NewsDao">
+	<select id="getAllNews" resultType="News">
+		select * from news
+	</select>
+	
+	<select id="getNewsByNid" resultType="News" parameterType="integer">
+		select * from news where nid=#{nid}
+	</select>
+	
+	<select id="getNewsByMsg" resultType="News" parameterType="map">
+		select * from news where ntid=#{ntid} and ncreatedate>#{date}
+	</select>
+
+</mapper>
